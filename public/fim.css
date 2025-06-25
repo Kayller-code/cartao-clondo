@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    position: absolute;
+    font-size: 70px;
+    color: #5a4f7d;
+    font-family: monospace;
+    text-align: center;
+}
+
+.line1, .line2 {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.line1 {
+    width: 0;
+    border-right: 4px solid; /* Cursor starts visible on line1 */
+    animation: typing1 1s steps(10) forwards, hideCursor1 0s 1s forwards; /* Cursor hidden after 1s */
+}
+
+.line2 {
+    width: 0;
+    border-right: 4px solid transparent; /* Cursor hidden initially */
+    animation: typing2 2s steps(22) 1s forwards, showCursor 0s 1s forwards, blinking 0.5s infinite step-end alternate 1s; /* Cursor shows and blinks from 1s onward */
+}
+
+@keyframes typing1 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 10ch; /* "Parabéns!" length */
+    }
+}
+
+@keyframes typing2 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 22ch; /* "Seu cartão foi clonado :)" length */
+    }
+}
+
+@keyframes hideCursor1 {
+    from {
+        border-right-color: #5a4f7d;
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
+@keyframes showCursor {
+    from {
+        border-right-color: transparent;
+    }
+    to {
+        border-right-color: #5a4f7d;
+    }
+}
+
+@keyframes blinking {
+    50% {
+        border-color: transparent;
+    }
+}
